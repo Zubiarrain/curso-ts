@@ -477,4 +477,32 @@ Los únicos valores que podemos usar en boolean son true o false.
 
 </aside>
 
+## Clase 6: Strings
+
+Al igual que en los anteriores, lo podemos hacer de forma explicita con `:string` o también de forma implícita.
+
+```tsx
+let productTitle = 'My amazing product';
+// productTitle = null;
+// productTitle = () => {}
+// productTitle = 123;
+productTitle = 'Newest amazing product'
+
+let productDescription: string = 'Awesome description'
+productDescription = "I'm a description (?"
+```
+
+También podemos utilizar los template literals para los strings
+
+```tsx
+let productTitle:string = 'Newest amazing product';
+let productDescription: string = 'Awesome description';
+let productPrice: number = 123;
+
+let summary:string = `
+title: ${productTitle}
+description: ${productDescription}
+price: ${productPrice}`
+```
+
 ##
