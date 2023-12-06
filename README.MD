@@ -375,3 +375,32 @@ const productPrice:number = 12;
 ```
 
 La parte del tipado, la llamamos **Type Annotation.**
+
+
+## Clase 8: Tipos inferidos
+
+El motor de TypeScript nos permite tanto darle el tipo de datos de forma explícita o los puede inferir por si mismo sin que lo tengamos que hacer de forma explicita.
+
+```tsx
+let myProductName = 'Product'; //Nos dice que el tipo es string
+let myProductPrice = 123; //Nos dice que el tipo es number
+```
+
+En caso de querer cambiar los tipos, nos va a advertir que estamos cambiando de tipos y lo va a marcar como un error.
+
+A su vez, al usar TS tenemos los métodos usados para cada tipo de datos, así en el caso de una variable de tipo string podemos acceder al método `.toLowerCase` de manera mas rapida, ya que el editor solo nos va a mostrar los métodos del tipo que estemos usando.
+
+Al declarar una constante, el tipo lo infiere como constante, ya que no se puede cambiar.
+
+---
+
+Al no tener el entorno de TypeScript configurado ni delimitado el alcance de las funciones, al hacer una declaración en un archivo distinto con el mismo nombre, nos va a arrojar error. Para delimitarlo, podemos hacer una función anónima autoejecutada y encerrar nuestro código ahí y que su scope este limitado a esa función.
+
+```tsx
+(() => {
+	let myProductName = 'Product';
+	let myProductPrice = 123;
+})();
+```
+
+#
