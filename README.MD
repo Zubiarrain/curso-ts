@@ -355,3 +355,4 @@ El flag `--watch`  a la hora de ejecutar `npx tsc --watch` hace que TypeScript s
 
 
 ## Clase 7: Qué es el tipado en TypeScript
+
