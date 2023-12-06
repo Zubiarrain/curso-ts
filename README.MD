@@ -449,4 +449,32 @@ console.log(bin) //10
 
 </aside>
 
+## Clase 10: Booleans
+
+Nos permite utilizar los booleanos `true` y `false`
+
+```tsx
+let isEnabled = true;
+//isEnabled = "hello" //Da error, ya que TS infirio que el dato es de tipo boolean
+
+let isNew : boolean = false;
+console.log(isNew) //false
+isNew = true;
+console.log(isNew) //true
+```
+
+```tsx
+let isNew: boolean;
+const random = Math.random();
+//isNew = random >= 0.5 ? "true" : "false" Esto da error ya que se le asignaria un string, tampoco podemos asignar 1 y 0 para ture y false ya que son tipo number
+isNew = random >= 0.5 ? true : false
+```
+
+Los únicos valores que podemos usar en boolean son true o false.
+
+<aside>
+❗ Al igual que en `number` a la hora de tipar nuestra variable, esta tiene que estar en minúsculas como `boolean` y no `Boolean`.
+
+</aside>
+
 ##
