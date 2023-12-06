@@ -403,4 +403,50 @@ Al no tener el entorno de TypeScript configurado ni delimitado el alcance de las
 })();
 ```
 
-#
+# Tipos de Datos
+
+## Clase 9: Numbers
+
+
+Para utilizar el primitivo number de forma explicita, lo podemos tipar con `:number`
+
+```tsx
+let productPrice: number = 100
+productPrice = productPrice + 1
+productPrice = productPrice + '1' // Esto nos lo alerta, ya que JS lo transformaria a string.
+```
+
+También podemos declarar una variable pero sin inicializarla. En estos casos nosotros debemos asignarle a la variable el tipo ya que TS no lo puede inferir.
+
+```tsx
+let productInStock: number;
+console.log(productInStock) // TS nos alerta que no inicializamos nuestra variable.
+```
+
+`parseInt` nos convierte el string a number, por lo que typescript nos va a inferir que el tipo de dato es number:
+
+```tsx
+let discount = parseInt('123') // TS infiere que discount es number.
+```
+
+Dentro de el conjunto number, TS nos permite utilizar otro tipo de números como hexadecimal, binario, etcétera.
+
+```tsx
+let hex = 0xFFF //Utilizamos 0x para denominar a los hexadecimales.
+let bin = 0b1010 //Utilizamos 0b para demnominar a los binarios.
+
+console.log(hex) //4095
+console.log(bin) //10
+```
+
+<aside>
+❗ A la hora de tipar nuestras variables number es importante hacerlo con `number` y no con `Number` ya que este último se refiere al prototipo Number.
+
+</aside>
+
+<aside>
+💡 `NaN` es considerado dentro del conjunto `number`.
+
+</aside>
+
+##
