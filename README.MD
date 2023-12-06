@@ -355,3 +355,23 @@ El flag `--watch`  a la hora de ejecutar `npx tsc --watch` hace que TypeScript s
 
 
 ## Clase 7: Qué es el tipado en TypeScript
+
+Si bien Javascript tiene tipos, es un lenguaje débilmente tipado, por lo que no se realiza una comprobación de los tipos.
+
+Al hacerlo tipado con TypeScript, evitamos errores ya que el analizador comprueba que no cambiemos los tipos a lo largo del tiempo
+
+A la hora de declarar variables en javascript lo hacemos de la siguiente forma:
+
+
+
+```jsx
+const productPrice = 12;
+```
+
+Mientras que en TypeScript tenemos que especificar los tipos:
+
+```tsx
+const productPrice:number = 12;
+```
+
+La parte del tipado, la llamamos **Type Annotation.**
