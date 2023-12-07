@@ -561,4 +561,27 @@ const rta2 = (<number>myDynamicVar2);
 console.log(rta2);
 ```
 
+## Clase 14: Union Types
+
+Union types nos permite mayor flexibilidad en nuestro código, ya que nos permite asignar varios tipos a una variable.
+
+```tsx
+let userID: string | number;
+userID = 1212;
+userID = 'FC45';
+
+function greeting(myText: string | number) {
+  if (typeof myText === 'string') {
+    `Hola ${myText.toLowerCase()}`;
+  } else if (typeof myText === 'number') {
+    `Sos el usuario Nº${myText}`;
+  }
+}
+/**Cuando pasa los if, nos habilita el autocompletado por tipos**/
+userID = 1212;
+greeting(userID);
+userID = 'FC45';
+greeting(userID);
+```
+
 ##
