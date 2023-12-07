@@ -536,4 +536,29 @@ let arrOfObj: object[] = [{a: 1, b : 2}, {c: 3}]
 arrOfObj.push([1,2,3]) // Esto es posible ya que el typeof array es object
 ```
 
+## Clase 13: Any
+
+- Este tipo de dato desactiva el tipado de TS y nos permite reasignar el tipo de dato de una variable.
+- No esta recomendado utilizar `any`, debido a que perdemos la posibilidad de atrapar cualquier error y básicamente estamos utilizando javascript. Sin embargo, si estamos migrando codigo de JS a TS puede ser útil, pero una vez que tengamos un proyecto consolidado con TypeScript, no deberíamos utilizar nunca `any`.
+
+```tsx
+let myDinamicVar : any;
+myDynamicVar = 100;
+myDynamicVar = "Hola";
+myDynamicVar = null;
+myDynamicVar = {};
+```
+
+- Podemos convertir el tipo de `any` a cualquier otro tipo de dato haciendo un **cast** con el `as` operator o utilizando genéricos `<type>`. Para usarlo lo podemos hacer de la siguiente forma:
+
+```tsx
+myDynamicVar = 'Hola';
+const rta = (myDynamicVar as string);
+console.log(rta);
+
+myDynamicVar2 = 1212;
+const rta2 = (<number>myDynamicVar2);
+console.log(rta2);
+```
+
 ##
