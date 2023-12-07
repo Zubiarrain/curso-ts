@@ -584,4 +584,32 @@ userID = 'FC45';
 greeting(userID);
 ```
 
+## Clase 15: Alias y tipos literales
+
+Los **alias** nos permiten agrupar varios tipos dentro de un prototipo.
+
+```tsx
+type UserID = string | number;
+
+let userID: UserID;
+userID = 1212;
+userID = 'FC45';
+
+function greeting(myText: UserID) {
+  if (typeof myText === 'string') {
+    `Hola ${myText.toLowerCase()}`;
+  } else if (typeof myText === 'number') {
+    `Sos el usuario Nº${myText}`;
+  }
+}
+```
+
+Los **literal types** nos permiten limitar dentro de una variable los valores.
+
+```tsx
+type ShirtSizes = 'S' | 'M' | 'L' | 'XL';
+let shirtSize: ShirtSizes;
+shirtSize = 'M'
+```
+
 ##
