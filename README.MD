@@ -745,4 +745,37 @@ const printTotal = (price: number):void => {
 }
 ```
 
+## Clase 19: Objetos en funciones
+
+Al pasarle como parámetro objetos a typescript este nos permite especificar tanto las keys como los tipos de cada value.
+
+```tsx
+const login = (data: {email: string, password: string}):void => {
+  const {email, password} = data
+  console.log(email,password)
+}
+login({email: "fran@co.me", password: "N0M3H4CK335"})
+```
+
+Ahora analizamos una función con un objeto un poco mas complejo:
+
+```tsx
+type ShirtSizes = 'S' | 'M' | 'L' | 'XL';
+
+const products:any[] = [];
+
+const addProduct = (data: {
+  title: string,
+  createdAt: Date,
+  stock: number,
+  size?: ShirtSizes
+}):void => {
+  products.push(data)
+};
+
+addProduct({title: "Remera fachera facherita", createdAt: new Date, stock: 10, size: "M"})
+addProduct({title: "Gorra", createdAt: new Date(), stock: 15})
+
+```
+
 ##
