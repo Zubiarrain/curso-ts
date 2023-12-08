@@ -810,4 +810,60 @@ addProduct({
 });
 ```
 
-#
+## Clase 21: Módulos: import y export
+
+Como buena práctica, a los archivos para modelado de datos debemos llamarlos de la siguiente forma: `nombre.model.ts` y a los archivos que van a tratar dichos datos de la siguiente manera: `nombre.service.ts`
+
+---
+
+`product.model.ts`
+
+```tsx
+export type ShirtSizes = 'S' | 'M' | 'L' | 'XL';
+export type Product = {
+  title: string;
+  createdAt: Date;
+  stock: number;
+  size?: ShirtSizes;
+};
+```
+
+`product.service.ts`
+
+```tsx
+import { Product } from '.product.model.ts'
+
+export const products: Product[] = [];
+export const addProduct = (data: Product): void => {
+  products.push(data);
+};
+export const calcStock = ():number => {
+  let total = 0;
+  products.forEach(product => total += product.stock)
+  return total;
+}
+```
+
+`main.ts` o `product.ts`
+
+```tsx
+import { addProduct, products, calcStock} from './product.service.ts'
+
+addProduct({
+  title: 'Remera fachera facherita',
+  createdAt: new Date(),
+  stock: 10,
+  size: 'M',
+});
+addProduct({
+  title: 'Gorra',
+  createdAt: new Date(),
+  stock: 15
+});
+
+console.log(products)
+const total = calcStock()
+console.log(total)
+```
+
+##
