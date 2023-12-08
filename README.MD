@@ -664,3 +664,49 @@ function hi(name: string | null) {
 ```
 
 Más información en **[MDN: Nullish coalescing operator (??)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)**
+
+
+## Clase 17: Funciones
+
+En TS tenemos que declarar el tipo de dato de cada parámetro en la función. Además de que vamos a tener la referencia de si nos faltan o sobran parámetros.
+
+```tsx
+type ShirtSizes = 'S' | 'M' | 'L' | 'XL';
+function createProductToJSON(
+title: string,
+createdAt: Date,
+stock: number,
+size: ShirtSizes){
+  return {
+    title,
+    createdAt,
+    stock,
+    size
+  }
+}
+
+const product1 = createProductToJSON('Prod 1',new Date(), 12,'XL')
+console.log(product1)
+console.log(product1.stock)
+```
+
+También podemos usar arrow functions y parámetros opcionales que de no ser declarados van a ser `undefined`:
+
+```tsx
+type ShirtSizes = 'S' | 'M' | 'L' | 'XL';
+const createProductToJSON = (
+  title: string,
+  createdAt: Date,
+  stock: number,
+  size?: ShirtSizes
+) => {
+  return {
+    title,
+    createdAt,
+    stock,
+    size,
+  };
+};
+```
+
+##
