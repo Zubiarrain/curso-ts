@@ -709,4 +709,40 @@ const createProductToJSON = (
 };
 ```
 
+## Clase 18: Retorno de funciones
+
+Con TypeScript podemos especificar el tipo de dato de lo que nos va a retornar agregandolo luego de los parámetros o lo puede inferir por si solo.
+
+```tsx
+const calcTotal = (prices: number[]):number => {
+  let total:number = 0;
+  total = prices.reduce((acc,num) => acc + num,0)
+	return total
+}
+const rta = calcTotal([1,2,3,4])
+```
+
+En funciones típicas lo hariamos de la siguiente manera:
+
+```tsx
+function calc(a:number,b:number):number{
+  return a + b;
+}
+```
+
+<aside>
+💡 Al especificar el retorno, TypeScript nos alerta que debemos retornar algo.
+
+</aside>
+
+### Void
+
+`void` nos permite especificar el tipo en funciones que no retornan nada.
+
+```tsx
+const printTotal = (price: number):void => {
+	console.log(`El total es: $${price}`)
+}
+```
+
 ##
