@@ -910,4 +910,26 @@ const rta = _.groupBy(data, item => item.role);
 console.log(rta)
 ```
 
-##
+## Clase 24: Conclusiones
+
+TypeScript nos ayuda a encontrar los errores que aparecen ya que va analizando el código constantemente a medida que lo vamos escribiendo y nos va alertando, además de que ayuda a la legibilidad ya que sabemos que tiene que tipo de datos reciben y retornan las funciones solo leyendo el tipado.
+
+## Extra: Cómo desestructurar en TS
+
+Desestructurar en TypeScript y hacerlo de forma tipada es contraintuitivo. Al usar en el primer objeto los dos puntos, lo que hacemos es renombrar dicha variable.
+
+```tsx
+const me: {username: string, age:number, email:string, role: string} = {
+  username: 'Franco',
+  age: 25,
+  email: 'fran@co.me',
+  role: 'student'
+}
+
+let {username, age, email:correo}: {username:string, age:number, email:string} = me;
+
+console.log(username) // 'Franco'
+console.log(correo) // 'fran@co.me'
+```
+
+#
