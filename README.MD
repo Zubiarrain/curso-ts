@@ -612,4 +612,55 @@ let shirtSize: ShirtSizes;
 shirtSize = 'M'
 ```
 
-##
+## Clase 16: Null y Undefined
+
+Para poder usar Null o Undefined en una variable, lo tenemos que especificar con los union types, ya que tanto `null` como `undefined` son su propio tipo de dato.
+
+```tsx
+let myNull = null; //Infiere any
+let myUndefined = undefined; //Infiere any
+
+let myName: string | null; //Hay veces que necesitamos que una variable
+
+function hi(name: string | null) {
+  let hello: string = 'Hello ';
+  if (name) {
+    hello += name;
+  } else {
+    hello += 'nobody';
+  }
+  console.log(hello);
+}
+myName = null;
+hi(myName); // "Hello nobody"
+myName = 'Franco';
+hi(myName); // "Hello Franco"
+```
+
+---
+
+ También esto lo podemos hacer de la siguiente manera con **optional chaining**:
+
+```tsx
+function hi(name: string | null) {
+  let hello: string = 'Hello ';
+  hello += name?.toLowerCase() || 'nobody'
+  console.log(hello);
+}
+```
+
+El optional chaining lo usamos cuando no tenemos la certeza de si tenemos un valor o no. Mas información en **[MDN: Optional chaining (?.)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)**
+
+---
+
+Tambien lo podemos hacer con el **Nullish Coalesing** de la siguiente forma:
+
+```tsx
+function hi(name: string | null) {
+  let hello: string = 'Hello ';
+	hello += name ?? 'nobody'
+  console.log(hello)
+}
+```
+
+Más información en **[MDN: Nullish coalescing operator (??)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)**
